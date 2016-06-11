@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cats Everywhere email addresses</title>
+  </head>
+  <body>
+    <p>Here are all the emails we have collected:</p>
+    <table>
+      <tr>
+        <th>Email</th>
+        <th>Gender</th> 
+      </tr>
+      {% for email in email_addresses %}
+      <tr>
+        <td>{{ email[0] }}</td>
+        <td>{{ email[1] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <p>THIS IS GONNA ROCK!</p>
+  </body>
+</html>
