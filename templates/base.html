@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% endblock %} - Flask Workshop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% block head_description %}{% endblock %}">
+  <meta name="author" content="{% block head_author %}{% endblock %}">
+   <link href="{{ url_for('static', filename='bootstrap/css/cerulean.css') }}" rel="stylesheet">
+  <style>
+  body {
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  }
+  </style>
+  <link href="{{ url_for('static', filename='bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet">
+
+  {% block extrahead %}{% endblock %}
+</head>
+
+<body>
+
+  <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="brand" href="/">Flask Workbook</a>
+
+          <!-- Everything you want hidden at 940px or less, place within here -->
+          <div class="nav-collapse collapse">
+            <!-- .nav, .navbar-search, .navbar-form, etc -->
+            <ul class="nav">
+              <li>
+                <a href="{{ url_for('emails') }}">Emails</a>
+              </li>
+              <li>
+                <a href="">New Page</a>
+              </li>
+            </ul>
+
+            <ul class="nav pull-right">
+              <li>
+                <a href="">
+                  Login
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  Signup
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  {% block content %}{% endblock %}
+</body>
+
+

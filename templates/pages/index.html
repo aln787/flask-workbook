@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ author }} app</title> 
+{% extends 'base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block extrahead %}
 
     <link     href='http://fonts.googleapis.com/css?family=Sintony:400,700'     rel='stylesheet' type='text/css'>
 
@@ -49,22 +49,21 @@
       }
     </style>
 
-  </head>  
+{% endblock %}
 
-  <body>
-    <div id="banner">
-      <h1>puppies everywhere</h1>
-      <p class="lead">We're bringing puppies to the internet. Free.     Cute. Awesome.</p>
+{% block content %}
+
+    <div class="container">
+      <div id="banner">
+        <h1>puppies everywhere</h1>
+        <p class="lead">Cute puppies!</p>
+      </div>
+      <div id="emailform" >
+        <form action="/signup" method="post">
+          <input type="text" name="email" class="form-control"></input><br>
+          <input type="submit" value="Signup" class="btn btn-icon btn-primary"></input>
+        </form>
+      </div>
     </div>
-    <div id="emailform">
-      <form action="/signup" method="post">
-        <input type="text" name="email"></input>
-        <select name="gender">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-        <input type="submit" value="Signup"></input>
-      </form>
-    </div>
-  </body>
-</html>
+
+{% endblock %}
